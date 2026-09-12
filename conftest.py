@@ -1,9 +1,11 @@
 import pytest
+from config.config import BASE_URL
 
 
 @pytest.fixture
 def page(browser):
     page = browser.new_page()
+    page.goto(BASE_URL)
     yield page
     page.close()
 
@@ -14,8 +16,7 @@ def browser(playwright):
         headless=False,
         slow_mo=1000
     )
-    yield browser
 
-    input("Press Enter to close the browser...")
+    yield browser
 
     browser.close()
