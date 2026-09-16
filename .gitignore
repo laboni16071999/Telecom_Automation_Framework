@@ -26,3 +26,7 @@ reports/
 Thumbs.db
 
 test_database.db
+
+# Allure
+allure-results/
+allure-report/
