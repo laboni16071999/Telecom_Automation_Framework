@@ -1,23 +1,16 @@
 [
-  {
-    "test_case": "valid_login",
-    "username": "standard_user",
-    "password": "secret_sauce",
-    "expected_result": "success",
-    "expected_message": "Products"
-  },
-  {
-    "test_case": "invalid_username",
-    "username": "wrong_user",
-    "password": "secret_sauce",
-    "expected_result": "failure",
-    "expected_message": "Epic sadface: Username and password do not match any user in this service"
-  },
-  {
-    "test_case": "invalid_password",
-    "username": "standard_user",
-    "password": "wrong_password",
-    "expected_result": "failure",
-    "expected_message": "Epic sadface: Username and password do not match any user in this service"
-  }
+    {
+        "test_case": "Valid Login",
+        "username": "standard_user",
+        "password": "secret_sauce",
+        "expected_result": "pass",
+        "expected_message": "Products"
+    },
+    {
+        "test_case": "Invalid Login",
+        "username": "standard_user",
+        "password": "wrong_password",
+        "expected_result": "fail",
+        "expected_message": "Epic sadface: Username and password do not match any user in this service"
+    }
 ]

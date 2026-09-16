@@ -1,8 +1,7 @@
 import pytest
 
-
 from PageObject.login_page import LoginPage
-from PageObject.dashboard_page import DashboardPage
+from PageObject.products_page import ProductsPage
 from utils.read_json import read_login_data
 
 
@@ -16,13 +15,6 @@ def test_login(page, data):
     # Create Login Page object
     login_page = LoginPage(page)
 
-    # Create meaningful test IDs
-    
-    test_data = [
-        pytest.param(data, id=data["test_case"])
-        for data in login_data
-    ]
-
     # Perform login using data from JSON
     login_page.login(
         data["username"],
@@ -30,13 +22,13 @@ def test_login(page, data):
     )
 
     # Validate expected result
-    if data["expected_result"] == "success":
+    if data["expected_result"] == "pass":
 
-        # Create Dashboard Page object
-        dashboard_page = DashboardPage(page)
+        # Create Products Page object
+        products_page = ProductsPage(page)
 
         # Validate successful login
-        assert dashboard_page.get_products_title() == data["expected_message"]
+        assert products_page.get_products_title() == data["expected_message"]
 
     else:
 

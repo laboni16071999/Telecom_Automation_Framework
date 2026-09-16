@@ -1,0 +1,35 @@
+[
+    {
+        "test_case": "Valid checkout",
+        "first_name": "priya",
+        "last_name": "sehgal",
+        "postal_code": "440001",
+        "expected_product": "Sauce Labs Backpack",
+        "expected_price": "$29.99",
+        "expected_payment": "SauceCard #31337",
+        "expected_shipping": "Free Pony Express Delivery!",
+        "expected_message": "Thank you for your order!",
+        "expected_total": "Total: $32.39"
+    },
+    {
+        "test_case": "Missing first name",
+        "first_name": "",
+        "last_name": "Das",
+        "postal_code": "440001",
+        "expected_error": "Error: First Name is required"
+    },
+    {
+        "test_case": "Missing last name",
+        "first_name": "Priya",
+        "last_name": "",
+        "postal_code": "440001",
+        "expected_error": "Error: Last Name is required"
+    },
+    {
+        "test_case": "Missing postal code",
+        "first_name": "Priya",
+        "last_name": "Das",
+        "postal_code": "",
+        "expected_error": "Error: Postal Code is required"
+    }
+]
